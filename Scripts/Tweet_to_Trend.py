@@ -19,7 +19,7 @@ import re
 
 DATA_DIR = "../Data"
 TWEETS_PATH = os.path.join(DATA_DIR, 'tweets')
-TREND_PATH = os.path.join(DATA_DIR, 'all_trends_world.csv')
+TREND_PATH = os.path.join(DATA_DIR, 'trends')
 SAVE_PATH = os.path.join(DATA_DIR, 'save')
 #os.listdir(DATA_DIR)
 
@@ -72,10 +72,10 @@ def onegram_augment(onegram):
 
 def nonegram_augment(nonegram):
     nonegram = set(nonegram)
-    nonegram_up = set([gram.upper() for gram in nonegram])
-    nonegram_lower = set([gram.lower() for gram in nonegram])
+#     nonegram_up = set([gram.upper() for gram in nonegram])
+#     nonegram_lower = set([gram.lower() for gram in nonegram])
     
-    return nonegram.union(nonegram_up, nonegram_lower)
+    return nonegram #nonegram.union(nonegram_up, nonegram_lower)
 
 
 # In[4]:
@@ -140,23 +140,25 @@ def prepare_data_trend_date_indexed_function(file, candidates):
 
         ##################################################################################################
         trends_that_day_onegrams = set([trend for trend in trends_that_day if len(trend.split(' ')) == 1])
-        onegram_trend_set = dict()
-        camel_split_set = dict()
+        onegram_trend_dict = dict()
+        camel_split_dict = dict()
+        
         for k in trends_that_day_onegrams:
             v1, v2 = onegram_augment([k])
-            onegram_trend_set[k] = v1
+            onegram_trend_dict[k] = v1
             if len(v2)!=0:
-                camel_split_set[k] = v2
-            
-            
+                camel_split_dict[k] = v2
+
+
         trends_that_day_nonegrams = trends_that_day - trends_that_day_onegrams
-        nonegram_trend_set = dict((k, nonegram_augment([k])) for k in trends_that_day_nonegrams )
-        #nonegram_trend_set.update(camel_split_set)
+        nonegram_trend_dict = dict((k, nonegram_augment([k])) for k in trends_that_day_nonegrams)
+        nonegram_trend_dict.update(camel_split_dict)        
         
-        ##################################################################################################
-        df_that_day['trends'] = df_that_day.text.apply( lambda x: 
-                                            index_trends(x, onegram_trend_set, nonegram_trend_set))
-        df_that_day = expand_trend_set(df_that_day, 'trends')
+        ################################### APPLY TREND INDEX #############################################
+        
+        df_that_day['trend'] = df_that_day.text.apply( lambda x: 
+                                            index_trends(x, onegram_trend_dict, nonegram_trend_dict))
+        df_that_day = expand_trend_set(df_that_day, 'trend')
         
         ##################################################################################################
         
@@ -164,6 +166,11 @@ def prepare_data_trend_date_indexed_function(file, candidates):
         dfs.append(df_that_day)
         
     dfs = pd.concat(dfs)
+#     dfs = dfs[['text','trends','trend_date']]\
+#         .groupby(['trends','trend_date'])['text']\
+#         .apply(lambda x: ','.join(x))\
+#         .reset_index()
+    
     new_file = file.split('_')[0] + "_trends.csv"
     dfs.to_csv('%s/%s' % (save_folder, new_file), index=False)
 
@@ -211,15 +218,11 @@ trend_date_parser("2013-07-07 23:36:32")
 
 if __name__ == '__main__':
     
-    trends = pd.read_csv(TREND_PATH, parse_dates=['date'], date_parser=trend_date_parser)
+    trends = pd.read_csv( os.path.join(TREND_PATH, 'all_trends_world.csv'),
+                         parse_dates=['date'], date_parser=trend_date_parser)
     prepare_data_trend_date_indexed_parallelized()
 
 
-
-
-
-
-# In[ ]:
 
 
 
