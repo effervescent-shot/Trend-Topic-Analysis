@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cecc8f27-2ba4-4827-9a89-b8bf43369720" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Notebooks/LDA_1.ipynb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/Tweet to Trend.ipynb" afterPath="$PROJECT_DIR$/Notebooks/Tweet to Trend.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" afterPath="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" afterPath="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trend_Topic_Analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +30,32 @@
       <file leaf-file-name="Tweet_to_Trend2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5409836">
-              <caret line="270" column="19" selection-start-line="270" selection-start-column="19" selection-end-line="270" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.36612022">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#585#1134#0" expanded="false" />
-                <element signature="e#1175#3881#0" expanded="false" />
-                <element signature="e#3923#4467#0" expanded="false" />
-                <element signature="e#4539#6492#0" expanded="false" />
-                <element signature="e#6536#6792#0" expanded="false" />
-                <element signature="e#9990#10118#0" expanded="false" />
+                <element signature="e#630#1179#0" expanded="false" />
+                <element signature="e#1220#3972#0" expanded="false" />
+                <element signature="e#4014#4558#0" expanded="false" />
+                <element signature="e#4630#6589#0" expanded="false" />
+                <element signature="e#6633#6889#0" expanded="false" />
+                <element signature="e#10090#10218#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LDA_Data_Prep.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#839#1425#0" expanded="false" />
+                <element signature="e#1453#2246#0" expanded="false" />
+                <element signature="e#2278#2734#0" expanded="false" />
+                <element signature="e#2761#3750#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -59,6 +77,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" />
+        <option value="$PROJECT_DIR$/LDA/LDA1.py" />
+        <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
         <option value="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" />
       </list>
     </option>
@@ -128,6 +148,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -151,7 +185,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Trend_Topic_Analysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" />
-      <option name="PARAMETERS" value="&quot;2019-07-01&quot; &quot;2019-08-01&quot;" />
+      <option name="PARAMETERS" value="&quot;2019-07-05&quot; &quot;2019-07-07&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -301,7 +335,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="25" width="1861" height="1055" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24972796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -309,7 +343,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3599114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3599114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -336,7 +370,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -363,18 +397,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#839#1425#0" expanded="false" />
+            <element signature="e#1453#2246#0" expanded="false" />
+            <element signature="e#2278#2734#0" expanded="false" />
+            <element signature="e#2761#3750#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5409836">
-          <caret line="270" column="19" selection-start-line="270" selection-start-column="19" selection-end-line="270" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.36612022">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#585#1134#0" expanded="false" />
-            <element signature="e#1175#3881#0" expanded="false" />
-            <element signature="e#3923#4467#0" expanded="false" />
-            <element signature="e#4539#6492#0" expanded="false" />
-            <element signature="e#6536#6792#0" expanded="false" />
-            <element signature="e#9990#10118#0" expanded="false" />
+            <element signature="e#630#1179#0" expanded="false" />
+            <element signature="e#1220#3972#0" expanded="false" />
+            <element signature="e#4014#4558#0" expanded="false" />
+            <element signature="e#4630#6589#0" expanded="false" />
+            <element signature="e#6633#6889#0" expanded="false" />
+            <element signature="e#10090#10218#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -13,6 +13,7 @@ DATA_DIR = "../Data"
 TWEETS_PATH = os.path.join(DATA_DIR, 'tweets')
 TREND_PATH = os.path.join(DATA_DIR, 'trends')
 SAVE_PATH = os.path.join(DATA_DIR, 'save')
+STATS_PATH = os.path.join(DATA_DIR, 'stats')
 
 RuleMatch = namedtuple('RuleMatch', 'trend rule')
 RuleMatchStats = namedtuple('RuleMatchStats', 'tweetSize matchedSize')
@@ -57,9 +58,14 @@ def onegram_augment(trend_topic):
     onegram_up = set([RuleMatch(trend=gram.trend.upper(), rule='simple-upper') for gram in onegram])
     onegram_lower = set([RuleMatch(trend=gram.trend.lower(), rule='simple-lower') for gram in onegram])
 
-    nohash = set([RuleMatch(trend=re.sub('#', '', gram.trend), rule='no-hashtag') for gram in onegram])
-    nohash_up = set([RuleMatch(trend=gram.trend.upper(), rule='no-hashtag-upper') for gram in nohash])
-    nohash_lower = set([RuleMatch(trend=gram.trend.lower(), rule='no-hashtag-lower') for gram in nohash])
+    nohash = set()
+    nohash_up = set()
+    nohash_lower = set()
+
+    if '#' in trend_topic:
+        nohash = set([RuleMatch(trend=re.sub('#', '', trend_topic), rule='no-hashtag')])
+        nohash_up = set([RuleMatch(trend=gram.trend.upper(), rule='no-hashtag-upper') for gram in nohash])
+        nohash_lower = set([RuleMatch(trend=gram.trend.lower(), rule='no-hashtag-lower') for gram in nohash])
 
     camelCase = camel_case_split(trend_topic)
     camelSplit = set()
@@ -72,9 +78,9 @@ def onegram_augment(trend_topic):
         ccHashed_up = set([RuleMatch(trend='#' + gram.trend, rule='camel-upper-hashtag') for gram in cc_up])
         ccHashed_lower = set([RuleMatch(trend='#' + gram.trend, rule='camel-lower-hashtag') for gram in cc_lower])
 
-        #         ccHashJoined = set([RuleMatch(trend='#'.join(camelCase), rule='camel-join-hashtag')])
-        #         ccHashJoined_up = set([RuleMatch(trend='#'.join(camelCase).upper(), rule='camel-upper-join-hashtag')])
-        #         ccHashJoined_lower = set([RuleMatch(trend='#'.join(camelCase).lower(), rule='camel-lower-join-hashtag')])
+        ccHashJoined = set([RuleMatch(trend='#'.join(camelCase), rule='camel-join-hashtag')])
+        ccHashJoined_up = set([RuleMatch(trend='#'.join(camelCase).upper(), rule='camel-upper-join-hashtag')])
+        ccHashJoined_lower = set([RuleMatch(trend='#'.join(camelCase).lower(), rule='camel-lower-join-hashtag')])
 
         """
         This part is to add it later to nongrams
@@ -84,8 +90,7 @@ def onegram_augment(trend_topic):
                                           set([RuleMatch(trend=' '.join(camelCase).upper(), rule='camel-join-upper')]),
                                           set([RuleMatch(trend=' '.join(camelCase).lower(), rule='camel-join-lower')]))
 
-        camelCase = set().union(ccHashed, ccHashed_up, ccHashed_lower)
-        # ,ccHashJoined_up, ccHashJoined_lower, ccHashJoined)
+        camelCase = set().union(ccHashed, ccHashed_up, ccHashed_lower, ccHashJoined_up, ccHashJoined_lower, ccHashJoined)
 
     onegram = onegram.union(onegram_up, onegram_lower, nohash, nohash_up, nohash_lower, camelCase)
 
@@ -153,9 +158,9 @@ def index_trends(text, onegram_trend_dict, nonegram_trend_dict):
 
         ###### Collect Statistics #####
         if len(trend_set) != 0 :
-            tm = TrendMatch(*zip(*trend_set))
-            unique_trends = set(tm.trend)
-            stats.append(len(unique_trends))
+            # tm = TrendMatch(*zip(*trend_set))
+            # unique_trends = set(tm.trend)
+            # stats.append(len(unique_trends))
             return trend_set
 
         else:
@@ -181,12 +186,15 @@ def prepare_data_trend_date_indexed_function(file, candidates):
 
     df = pd.read_csv('%s/%s' % (tweets_folder, file))
     dfs = []
+    total_tweet = 0
 
     for candidate in candidates:
-        stats = []
-
         df_that_day = pd.DataFrame(df)
         trends_that_day = set(trends[trends.date == candidate]['name'])
+
+        # Stats collection
+        total_tweet += df_that_day.shape[0]
+        stats = []
 
         if (len(trends_that_day) == 0):
             print('trends for %s not found!' % candidate)
@@ -199,7 +207,7 @@ def prepare_data_trend_date_indexed_function(file, candidates):
         for k in trends_that_day_onegrams:
             v1, v2 = onegram_augment(k)
             onegram_trend_dict[k] = v1
-            if len(v2)!=0:
+            if len(v2)!= 0:
                 camel_split_dict[k] = v2
 
 
@@ -215,8 +223,8 @@ def prepare_data_trend_date_indexed_function(file, candidates):
 
         df_that_day = expand_trend_set(df_that_day, 'TrendMatch')
         df_that_day['trend'] = df_that_day['TrendMatch'].apply(lambda x: x.trend)
-        df_that_day['match '] = df_that_day['TrendMatch'].apply(lambda x: x.match)
-        df_that_day['match rule'] = df_that_day['TrendMatch'].apply(lambda x: x.matchRule)
+        df_that_day['match'] = df_that_day['TrendMatch'].apply(lambda x: x.match)
+        df_that_day['match_rule'] = df_that_day['TrendMatch'].apply(lambda x: x.matchRule)
 
         df_that_day.drop(['TrendMatch'], axis=1, inplace=True)
         ###################################################################################################
@@ -226,11 +234,9 @@ def prepare_data_trend_date_indexed_function(file, candidates):
 
 
     dfs = pd.concat(dfs)
-#     print("DONE:", '%s/%s' % (tweets_folder, file))
     new_file = file.split('_')[0] + "_trends.csv"
     dfs.to_csv('%s/%s' % (save_folder, new_file), index=False)
-
-    f.write("2019-08-30" + "_" + str(sum(stats)/len(stats)))
+    statsFile.write(str(total_tweet) + "," + str(dfs.shape[0]) + "\n")
 
 
 def prepare_data_trend_date_indexed_parallelized():
@@ -238,7 +244,7 @@ def prepare_data_trend_date_indexed_parallelized():
     save_folder = SAVE_PATH
 
     files = os.listdir(tweets_folder)
-    files = [file for file in files if file >= start and file <= end and 'csv' in file]  # trends only available after this date
+    files = [file for file in files if file >= start and file <= end and 'csv' in file]
     pool = mp.Pool(mp.cpu_count() - 2)
 
     for i, file in enumerate(files):
@@ -248,7 +254,7 @@ def prepare_data_trend_date_indexed_parallelized():
         one_day_before = that_day - pd.Timedelta(days=1)
         one_day_after = that_day + pd.Timedelta(days=1)
         candidates = [str(that_day), str(one_day_before), str(one_day_after)]
-        # pool.apply_async(prepare_data_trend_date_indexed_function, args=(file, candidates))
+        pool.apply_async(prepare_data_trend_date_indexed_function, args=(file, candidates))
 
     pool.close()
     pool.join()
@@ -269,10 +275,14 @@ if __name__ == '__main__':
 
     start = sys.argv[1]
     end = sys.argv[2]
-    print("Hello, tweets from {} to {} will be considered.".format(start, end))
-    # trends = pd.read_csv(os.path.join(TREND_PATH, 'all_trends_world.csv'),
-    #                      parse_dates=['date'], date_parser=trend_date_parser)
-    f = open(os.path.join(SAVE_PATH, "stats.txt"), "w+")
 
+    start ="2019-07-03"
+    end = "2019-07-04"
+    print("Hello, tweets from {} to {} will be considered.".format(start, end))
+    trends = pd.read_csv(os.path.join(TREND_PATH, 'all_trends_world.csv'),
+                         parse_dates=['date'], date_parser=trend_date_parser)
+
+    statsFile = open(os.path.join(STATS_PATH, "stats.txt"), "w+")
     prepare_data_trend_date_indexed_parallelized()
-    f.close()
+    statsFile.close()
+
