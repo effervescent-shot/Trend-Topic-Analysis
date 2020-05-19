@@ -115,9 +115,8 @@ def index_trends(text, onegram_trend_set, nonegram_trend_set):
 def expand_trend_set(df, trend_col):
     
     non_list_cols = [col for col in (df.columns) if col != trend_col ]
-    df2 = pd.DataFrame(df[trend_col].tolist(), index=[df[col] for col in non_list_cols])                    .stack()                    .reset_index(name=trend_col)[non_list_cols+[trend_col]]
+    df2 = pd.DataFrame(df[trend_col].tolist(), index=[df[col] for col in non_list_cols]).stack().reset_index(name=trend_col)[non_list_cols+[trend_col]]
     return df2
-
 
 # In[6]:
 
