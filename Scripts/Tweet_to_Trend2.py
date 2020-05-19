@@ -236,7 +236,10 @@ def prepare_data_trend_date_indexed_function(file, candidates):
     dfs = pd.concat(dfs)
     new_file = file.split('_')[0] + "_trends.csv"
     dfs.to_csv('%s/%s' % (save_folder, new_file), index=False)
+    statsFile = open(os.path.join(STATS_PATH, "stats.txt"), "a+")
     statsFile.write(str(total_tweet) + "," + str(dfs.shape[0]) + "\n")
+    statsFile.close()
+
 
 
 def prepare_data_trend_date_indexed_parallelized():
@@ -273,16 +276,14 @@ def trend_date_parser(d):
 
 if __name__ == '__main__':
 
-    start = sys.argv[1]
-    end = sys.argv[2]
+    # start = sys.argv[1]
+    # end = sys.argv[2]
 
-    start ="2019-07-03"
-    end = "2019-07-04"
+    start ="2019-06-30"
+    end = "2019-08-01"
     print("Hello, tweets from {} to {} will be considered.".format(start, end))
     trends = pd.read_csv(os.path.join(TREND_PATH, 'all_trends_world.csv'),
                          parse_dates=['date'], date_parser=trend_date_parser)
 
-    statsFile = open(os.path.join(STATS_PATH, "stats.txt"), "w+")
     prepare_data_trend_date_indexed_parallelized()
-    statsFile.close()
 
