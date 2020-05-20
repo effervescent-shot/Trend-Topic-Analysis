@@ -20,6 +20,9 @@ from preprocessor.api import clean
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+from gensim.corpora import MmCorpus, Dictionary
+from gensim.test.utils import get_tmpfile
+
 
 # NLTK Stop words
 from nltk.corpus import stopwords
@@ -131,11 +134,18 @@ if __name__ == '__main__':
     stemmed_dataset, corpus, dictionary = lda_datasets(trend_docs)
 
     # Check multiple models
-    model_check()
+    # model_check()
 
 
+    output_fname = get_tmpfile("BIG_CORPUS.mm")
+    MmCorpus.serialize(output_fname, corpus)
 
+    tmp_fname = get_tmpfile("BIG_DICTIONARY")
+    dictionary.save_as_text(tmp_fname)
 
+    stemmed_dataset.to_csv('stemmed_data.zip', index=True)
+
+    print("FINISHED")
     # Load a potentially pretrained model from disk.
     # cwd = os.getcwd()
     # temp_file = datapath(os.path.join(cwd, "models/lda_model_16"))
