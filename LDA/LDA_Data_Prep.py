@@ -40,16 +40,16 @@ def clear_text(dfs):
     exclude = '[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]'
     non_ascii = re.compile(r'[^\x00-\x7F]+')
 
-    dfs['trend'] = dfs['trend'].map(lambda x : x.lower())
-    dfs['trend'] = dfs['trend'].map(lambda x : x.translate(remove_digits))
-    dfs['trend'] = dfs['trend'].map(lambda x : re.sub(str(exclude), '', x))
+    dfs['trend'] = dfs['trend'].map(lambda x: x.lower())
+    dfs['trend'] = dfs['trend'].map(lambda x: x.translate(remove_digits))
+    dfs['trend'] = dfs['trend'].map(lambda x: re.sub(str(exclude), '', x))
 
 
-    dfs['text'] = dfs['text'].map(lambda x : x.lower())
-    dfs['text'] = dfs['text'].map(lambda x : clean(x))
-    dfs['text'] = dfs['text'].map(lambda x : x.translate(remove_digits))
-    dfs['text'] = dfs['text'].map(lambda x : re.sub(str(exclude), '', x))
-    dfs['text'] = dfs['text'].map(lambda x : re.sub(non_ascii, '', x))
+    dfs['text'] = dfs['text'].map(lambda x: x.lower())
+    dfs['text'] = dfs['text'].map(lambda x: clean(x))
+    dfs['text'] = dfs['text'].map(lambda x: x.translate(remove_digits))
+    dfs['text'] = dfs['text'].map(lambda x: re.sub(str(exclude), '', x))
+    dfs['text'] = dfs['text'].map(lambda x: re.sub(non_ascii, '', x))
 
     dfs.drop_duplicates(inplace=True)
 

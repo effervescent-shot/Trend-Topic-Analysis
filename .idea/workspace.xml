@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cecc8f27-2ba4-4827-9a89-b8bf43369720" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LDA/LDA.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/DataPrep.ipynb" afterPath="$PROJECT_DIR$/Notebooks/DataPrep.ipynb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/LDA/LDA.py" afterPath="$PROJECT_DIR$/LDA/LDA_Model_Select.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16.expElogbeta.npy" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16.expElogbeta.npy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/models/lda_model_16.expElogbeta.npy" afterPath="$PROJECT_DIR$/Notebooks/models/lda_model_16.expElogbeta.npy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16.id2word" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16.id2word" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/models/lda_model_16.id2word" afterPath="$PROJECT_DIR$/Notebooks/models/lda_model_16.id2word" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16.state" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16.state" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/models/lda_model_16.state" afterPath="$PROJECT_DIR$/Notebooks/models/lda_model_16.state" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/models/lda_model_16" afterPath="$PROJECT_DIR$/Notebooks/models/lda_model_16" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/LDA1.ipynb" afterPath="$PROJECT_DIR$/Notebooks/LDA1.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" afterPath="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/Preliminary_2.ipynb" afterPath="$PROJECT_DIR$/Notebooks/Preliminary_2.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trend_Topic_Analysis.iws" />
@@ -45,28 +53,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LDA_Data_Prep.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LDA_Data_Prep.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="24" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.6265938">
+              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#441#1020#0" expanded="false" />
-                <element signature="e#1048#1850#0" expanded="false" />
-                <element signature="e#1882#2338#0" expanded="false" />
+                <element signature="e#1874#2330#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LDA.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LDA/LDA.py">
+      <file leaf-file-name="LDA_Model_Select.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LDA/LDA_Model_Select.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2786884">
-              <caret line="100" column="81" selection-start-line="100" selection-start-column="81" selection-end-line="100" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="94" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#875#917#0" expanded="false" />
+                <element signature="e#946#1233#0" expanded="false" />
+                <element signature="e#1266#1338#0" expanded="false" />
+                <element signature="e#1375#1450#0" expanded="false" />
+                <element signature="e#1486#1543#0" expanded="false" />
+                <element signature="e#1585#1781#0" expanded="false" />
+                <element signature="e#1843#2034#0" expanded="false" />
+                <element signature="e#2070#2240#0" expanded="false" />
+                <element signature="e#2271#2789#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,8 +107,9 @@
         <option value="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" />
         <option value="$PROJECT_DIR$/LDA/LDA1.py" />
         <option value="$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py" />
-        <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
         <option value="$PROJECT_DIR$/LDA/LDA.py" />
+        <option value="$PROJECT_DIR$/LDA/LDA_Model_Select.py" />
+        <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
       </list>
     </option>
   </component>
@@ -174,20 +192,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Trend_Topic_Analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Trend_Topic_Analysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LDA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -244,7 +248,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Trend_Topic_Analysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDA/LDA.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDA/LDA_Model_Select.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -461,19 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#441#1020#0" expanded="false" />
-            <element signature="e#1048#1850#0" expanded="false" />
-            <element signature="e#1882#2338#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -490,12 +481,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LDA/LDA.py">
+    <entry file="file://$PROJECT_DIR$/LDA/LDA_Model_Select.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2786884">
-          <caret line="100" column="81" selection-start-line="100" selection-start-column="81" selection-end-line="100" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="94" selection-end-column="20" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#875#917#0" expanded="false" />
+            <element signature="e#946#1233#0" expanded="false" />
+            <element signature="e#1266#1338#0" expanded="false" />
+            <element signature="e#1375#1450#0" expanded="false" />
+            <element signature="e#1486#1543#0" expanded="false" />
+            <element signature="e#1585#1781#0" expanded="false" />
+            <element signature="e#1843#2034#0" expanded="false" />
+            <element signature="e#2070#2240#0" expanded="false" />
+            <element signature="e#2271#2789#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6265938">
+          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#441#1020#0" expanded="false" />
+            <element signature="e#1874#2330#0" expanded="false" />
           </folding>
         </state>
       </provider>
