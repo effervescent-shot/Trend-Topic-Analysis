@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
 
 
 import pandas as pd
@@ -78,8 +74,6 @@ def nonegram_augment(nonegram):
     return nonegram #nonegram.union(nonegram_up, nonegram_lower)
 
 
-# In[4]:
-
 
 def index_trends(text, onegram_trend_set, nonegram_trend_set):
     try:
@@ -106,10 +100,6 @@ def index_trends(text, onegram_trend_set, nonegram_trend_set):
     except:
         print(text)
         return set()
-    
-
-
-# In[5]:
 
 
 def expand_trend_set(df, trend_col):
@@ -118,7 +108,6 @@ def expand_trend_set(df, trend_col):
     df2 = pd.DataFrame(df[trend_col].tolist(), index=[df[col] for col in non_list_cols]).stack().reset_index(name=trend_col)[non_list_cols+[trend_col]]
     return df2
 
-# In[6]:
 
 
 def prepare_data_trend_date_indexed_function(file, candidates):
@@ -174,8 +163,6 @@ def prepare_data_trend_date_indexed_function(file, candidates):
     dfs.to_csv('%s/%s' % (save_folder, new_file), index=False)
 
 
-# In[7]:
-
 
 def prepare_data_trend_date_indexed_parallelized():
     
@@ -190,8 +177,8 @@ def prepare_data_trend_date_indexed_parallelized():
         print('%d / %d - %s' % (i, len(files), file))
         date = file.split('_')[0]
         that_day = pd.Timestamp(date).date()
-        one_day_before = that_day - pd.Timedelta(days = 1)
-        one_day_after = that_day + pd.Timedelta(days = 1)
+        one_day_before = that_day - pd.Timedelta(days= 1)
+        one_day_after = that_day + pd.Timedelta(days= 1)
         candidates = [str(that_day), str(one_day_before), str(one_day_after)]
         pool.apply_async(prepare_data_trend_date_indexed_function, args=(file, candidates))
 

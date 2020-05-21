@@ -130,3 +130,6 @@ dmypy.json
 
 # Data
 Data/
+
+# LDA data
+LDA/ldadata/

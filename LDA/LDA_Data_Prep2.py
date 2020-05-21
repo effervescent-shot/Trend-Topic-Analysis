@@ -1,25 +1,8 @@
 import os
-import re
-import sys
-import numpy as np
 import pandas as pd
-import string
-import re
-
 import nltk
 from nltk.stem import PorterStemmer
-from nltk.tokenize import RegexpTokenizer
-from nltk.stem.wordnet import WordNetLemmatizer
-from gensim import corpora, models
-from gensim.models.coherencemodel import CoherenceModel
-from gensim.test.utils import common_corpus, common_dictionary, datapath
 import gensim
-
-import preprocessor as p
-from preprocessor.api import clean
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-
 from gensim.corpora import MmCorpus, Dictionary
 from gensim.test.utils import get_tmpfile
 
@@ -63,8 +46,8 @@ def remove_stopwords(texts):
     return [word for word in texts if word not in stop_words]
 
 
-def process_lda_format(trend_doc):
-    tokenized_df = tokanize_text(trend_doc)
+def process_lda_format(trend_docs):
+    tokenized_df = tokanize_text(trend_docs)
     stemmed_dataset = tokenized_df.apply(semmatize_text)
     stemmed_dataset = stemmed_dataset.map(lambda x: remove_stopwords(x))
     return stemmed_dataset
@@ -75,43 +58,6 @@ def initialize_corpus_and_dictionary(stemmed_dataset):
     word_corpus = [dictionary_of_words.doc2bow(word) for word in stemmed_dataset]
 
     return word_corpus, dictionary_of_words
-
-
-def lda_datasets(trend_doc):
-    stemmed_dataset = process_lda_format(trend_doc)
-    corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
-
-    return stemmed_dataset, corpus, dictionary
-
-
-def run_lda(topic_num):
-    # Model with the best coherence_value
-    lda_model = models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=topic_num,
-                                            random_state=1, update_every=1, chunksize=100,
-                                            passes=50, alpha='auto', per_word_topics=True)
-
-    cwd = os.getcwd()
-    temp_file = datapath(os.path.join(cwd, "models/lda_model_"+str(topic_num)))
-    print('Model is saving... at', temp_file)
-    lda_model.save(temp_file)
-
-    return lda_model
-
-
-def model_check():
-
-    for topic_number in range(10, 17, 3):
-        lda_model = run_lda(topic_number)
-
-        # Compute Perplexity Score
-        print('Perplexity Score: ', lda_model.log_perplexity(corpus))
-
-        # Compute Coherence Score
-        cohr_val = CoherenceModel(model=lda_model, texts=stemmed_dataset, dictionary=dictionary,
-                                  coherence='c_v').get_coherence()
-
-        print('Coherence Score: ', cohr_val)
-
 
 
 if __name__ == '__main__':
@@ -131,21 +77,35 @@ if __name__ == '__main__':
     stop_words = get_stop_words()
 
     # Create data structures to be used in LDA
-    stemmed_dataset, corpus, dictionary = lda_datasets(trend_docs)
-
-    # Check multiple models
-    # model_check()
+    stemmed_dataset = process_lda_format(trend_docs)
+    corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
 
 
-    output_fname = get_tmpfile("BIG_CORPUS.mm")
+    # SAVE DATA
+
+    output_fname = get_tmpfile("corpus0.mm")
     MmCorpus.serialize(output_fname, corpus)
+    mm = MmCorpus(output_fname)
+    mm.save("./ldadata/corpus0")
 
-    tmp_fname = get_tmpfile("BIG_DICTIONARY")
-    dictionary.save_as_text(tmp_fname)
+    dictionary.save_as_text("./ldadata/dictionary0")
 
-    stemmed_dataset.to_csv('stemmed_data.zip', index=True)
+    stemmed_dataset.to_csv('./ldadata/stemmed_data.zip', index=True)
 
-    print("FINISHED")
+    print("FINISHED SAVING")
+
+    print("CHECKING INTEGRITY")
+    corps = MmCorpus.load("./ldadata/corpus0")
+    print("CORPUS: ", len(corpus), len(corps))
+
+    dicts = Dictionary.load_from_text("./ldadata/dictionary0")
+    print("DICTIONARY: ", len(dictionary), len(dicts))
+
+    dataset = pd.read_csv("./ldadata/stemmed_data.zip")
+    print("DATASET: ", len(stemmed_dataset), len(dataset))
+
+
+
     # Load a potentially pretrained model from disk.
     # cwd = os.getcwd()
     # temp_file = datapath(os.path.join(cwd, "models/lda_model_16"))
