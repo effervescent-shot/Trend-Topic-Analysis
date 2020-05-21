@@ -87,8 +87,8 @@ if __name__ == '__main__':
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
     models_run_parallelized()
-    for topic_number in range(10, 17, 3):
+    for topic_number in range(7, 25, 3):
         models_run_function((topic_number))
 
-    for topic_number in range(10, 17, 3):
+    for topic_number in range(7, 25, 3):
         models_check(topic_number)
