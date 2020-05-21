@@ -2,23 +2,18 @@ import os
 import re
 import sys
 import numpy as np
+from datetime import datetime
 import pandas as pd
 import multiprocessing as mp
-
-
 
 from gensim import corpora, models
 from gensim.models.coherencemodel import CoherenceModel
 from gensim.test.utils import common_corpus, common_dictionary, datapath
 import gensim
 
-
 from gensim.corpora import MmCorpus, Dictionary
 from gensim.test.utils import get_tmpfile
 
-
-# NLTK Stop words
-from nltk.corpus import stopwords
 
 DATA_DIR = "../Data"
 TWEETS_PATH = os.path.join(DATA_DIR, 'tweets')
@@ -26,8 +21,6 @@ TREND_PATH = os.path.join(DATA_DIR, 'trends')
 SAVE_PATH = os.path.join(DATA_DIR, 'save')
 STATS_PATH = os.path.join(DATA_DIR, 'stats')
 TOPICS_PATH = os.path.join(DATA_DIR, 'topics')
-
-
 
 
 def load_lda_datasets():
@@ -45,14 +38,14 @@ def load_lda_datasets():
 
 def models_run_function(topic_num):
     # Model with the best coherence_value
-
+    print('Model start running for ', topic_num, ' topics. Start time: ', datetime.now())
+    #ldamodel.LdaModel
     lda_model = models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=topic_num,
-                                            random_state=1, update_every=1, chunksize=100,
-                                            passes=50, alpha='auto', per_word_topics=True)
-
+                                        random_state=1, chunksize=100, passes=5,
+                                        alpha='auto', per_word_topics=True)
     cwd = os.getcwd()
     temp_file = datapath(os.path.join(cwd, "models/lda_model_"+str(topic_num)))
-    print('Model is saving... at', temp_file)
+    print('Finish time: ', datetime.now(), 'Model is saving... at', temp_file, '\n')
     lda_model.save(temp_file)
 
     return lda_model
@@ -60,7 +53,7 @@ def models_run_function(topic_num):
 
 def models_run_parallelized():
 
-    pool = mp.Pool(mp.cpu_count() - 2)
+    pool = mp.Pool(mp.cpu_count()-2)
 
     for topic_number in range(10, 17, 3):
         pool.apply_async(models_run_function, args=(topic_number))
@@ -90,12 +83,12 @@ def models_check(topic_num):
 
 if __name__ == '__main__':
 
-    print("H#RE WE GO!")
+    print("HERE WE GO!")
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
     models_run_parallelized()
-    for topic_number in range(10, 30, 3):
+    for topic_number in range(10, 17, 3):
         models_run_function((topic_number))
 
-    for topic_number in range(10, 30, 3):
+    for topic_number in range(10, 17, 3):
         models_check(topic_number)

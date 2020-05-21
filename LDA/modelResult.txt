@@ -1,16 +1,19 @@
-HRE WE GO!
+H#RE WE GO!
 LOADING CORPUS, LENGTH:  1151
 LOADING DICTIONARY, LENGTH:  54164
 LOADING DATASET, LENGTH:  1151
+Model is saving... at /home/lilith/Desktop/EPFL_courses/PROJE_TUGRULCAN/Trend_Topic_Analysis/LDA/models/lda_model_10
+Model is saving... at /home/lilith/Desktop/EPFL_courses/PROJE_TUGRULCAN/Trend_Topic_Analysis/LDA/models/lda_model_13
+Model is saving... at /home/lilith/Desktop/EPFL_courses/PROJE_TUGRULCAN/Trend_Topic_Analysis/LDA/models/lda_model_16
 Topic number =  10
-Perplexity Score:  -7.434890594980527
-Coherence Score:  0.6479457303553466
+Perplexity Score:  -7.154403928663175
+Coherence Score:  0.5544501649663017
 ========================================
 Topic number =  13
-Perplexity Score:  -7.7391294851502614
-Coherence Score:  0.6530598135297102
+Perplexity Score:  -7.082128875124172
+Coherence Score:  0.554388607217802
 ========================================
 Topic number =  16
-Perplexity Score:  -8.16939447870442
-Coherence Score:  0.6634416559086657
+Perplexity Score:  -7.066164315882067
+Coherence Score:  0.5386487646647716
 ========================================
