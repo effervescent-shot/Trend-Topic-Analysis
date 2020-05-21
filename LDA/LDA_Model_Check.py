@@ -90,12 +90,12 @@ def models_check(topic_num):
 
 if __name__ == '__main__':
 
-    print("HRE WE GO!")
+    print("H#RE WE GO!")
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
-    # models_run_parallelized()
-    # for topic_number in range(10, 30, 3):
-    #     models_run_function((topic_number))
+    models_run_parallelized()
+    for topic_number in range(10, 30, 3):
+        models_run_function((topic_number))
 
     for topic_number in range(10, 30, 3):
         models_check(topic_number)
