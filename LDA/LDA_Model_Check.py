@@ -43,8 +43,9 @@ def load_lda_datasets():
 
     return dataset, corps, dicts
 
-def run_lda(topic_num):
+def models_run_function(topic_num):
     # Model with the best coherence_value
+
     lda_model = models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=topic_num,
                                             random_state=1, update_every=1, chunksize=100,
                                             passes=50, alpha='auto', per_word_topics=True)
@@ -57,12 +58,12 @@ def run_lda(topic_num):
     return lda_model
 
 
-def models_run():
+def models_run_parallelized():
 
     pool = mp.Pool(mp.cpu_count() - 2)
 
     for topic_number in range(10, 17, 3):
-        pool.apply_async(run_lda, args=(topic_number))
+        pool.apply_async(models_run_function, args=(topic_number) )
 
     pool.close()
     pool.join()
@@ -72,15 +73,18 @@ def models_check(topic_num):
 
     cwd = os.getcwd()
     temp_file = datapath(os.path.join(cwd, "models/lda_model_"+str(topic_num)))
-    lda_model =  models.ldamodel.LdaModel.load(temp_file)
+    lda_model = models.ldamodel.LdaModel.load(temp_file)
     print("Topic number = ", topic_num)
 
     # Compute Perplexity Score
     print('Perplexity Score: ', lda_model.log_perplexity(corpus))
 
     # Compute Coherence Score
-    cohr_val = CoherenceModel(model=lda_model, texts=stemmed_dataset, dictionary=dictionary, coherence='c_v').get_coherence()
+    cohr_val = CoherenceModel(model=lda_model, texts=stemmed_dataset['0'], corpus = corpus, dictionary=dictionary, coherence='u_mass').get_coherence()
     print('Coherence Score: ', cohr_val)
+    print("========================================")
+
+
 
 
 
@@ -89,3 +93,9 @@ if __name__ == '__main__':
     print("HRE WE GO!")
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
+    # models_run_parallelized()
+    for topic_number in range(10, 30, 3):
+        models_run_function((topic_number))
+
+    for topic_number in range(10, 30, 3):
+        models_check(topic_number)

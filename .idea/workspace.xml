@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cecc8f27-2ba4-4827-9a89-b8bf43369720" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LDA/LDA_Model_Check.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/LDA/LDA_Model_Select.py" afterPath="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_10.id2word" afterPath="$PROJECT_DIR$/LDA/models/lda_model_10.id2word" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_10" afterPath="$PROJECT_DIR$/LDA/models/lda_model_10" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_13.id2word" afterPath="$PROJECT_DIR$/LDA/models/lda_model_13.id2word" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_13" afterPath="$PROJECT_DIR$/LDA/models/lda_model_13" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16.id2word" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16.id2word" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/models/lda_model_16" afterPath="$PROJECT_DIR$/LDA/models/lda_model_16" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notebooks/LDA1.ipynb" afterPath="$PROJECT_DIR$/Notebooks/LDA1.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" afterPath="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" afterPath="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LDA/LDA_Model_Check.py" afterPath="$PROJECT_DIR$/LDA/LDA_Model_Check.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Trend_Topic_Analysis.iws" />
@@ -28,63 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Tweet_to_Trend2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="238" column="2" selection-start-line="238" selection-start-column="2" selection-end-line="240" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#630#1179#0" expanded="false" />
-                <element signature="e#1220#3972#0" expanded="false" />
-                <element signature="e#4014#4558#0" expanded="false" />
-                <element signature="e#4630#6589#0" expanded="false" />
-                <element signature="e#6633#6889#0" expanded="false" />
-                <element signature="e#10179#10307#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LDA_Data_Prep.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#441#1020#0" expanded="false" />
-                <element signature="e#1048#1842#0" expanded="false" />
-                <element signature="e#1874#2330#0" expanded="false" />
-                <element signature="e#2358#3376#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tweet_to_Trend.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="185" selection-end-column="15" />
-              <folding>
-                <element signature="e#2#21#0" expanded="true" />
-                <element signature="e#386#619#0" expanded="false" />
-                <element signature="e#668#2011#0" expanded="false" />
-                <element signature="e#2050#2269#0" expanded="false" />
-                <element signature="e#2340#3221#0" expanded="false" />
-                <element signature="e#3270#3503#0" expanded="false" />
-                <element signature="e#3580#5589#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LDA_Data_Prep2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <caret line="83" column="15" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#521#563#0" expanded="false" />
@@ -101,11 +53,11 @@
       <file leaf-file-name="LDA_Model_Check.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LDA/LDA_Model_Check.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27868852">
-              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.73770493">
+              <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1841#2332#0" expanded="false" />
+                <element signature="e#1664#1843#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,8 +84,8 @@
         <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
         <option value="$PROJECT_DIR$/LDA/LDA_Model_Select.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" />
         <option value="$PROJECT_DIR$/Scripts/Tweet_to_Trend.py" />
+        <option value="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" />
         <option value="$PROJECT_DIR$/LDA/LDA_Model_Check.py" />
       </list>
     </option>
@@ -213,7 +165,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Notebooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="LDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Trend_Topic_Analysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LDA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,7 +242,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
   </component>
-  <component name="RunManager" selected="Python.LDA">
+  <component name="RunManager" selected="Python.LDA_Model_Check">
     <configuration default="false" name="Tweet_to_Trend2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -276,24 +260,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="LDA_Data_Prep" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LDA" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Trend_Topic_Analysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDA/LDA_Data_Prep.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="LDA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="LDA_Data_Prep2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -306,6 +273,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Trend_Topic_Analysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDA/LDA_Data_Prep2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LDA_Model_Check" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LDA" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Trend_Topic_Analysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LDA/LDA_Model_Check.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -434,13 +418,13 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.Tweet_to_Trend2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.LDA_Data_Prep" />
-      <item index="2" class="java.lang.String" itemvalue="Python.LDA" />
+      <item index="1" class="java.lang.String" itemvalue="Python.LDA_Data_Prep2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.LDA_Model_Check" />
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.LDA" />
-        <item index="1" class="java.lang.String" itemvalue="Python.LDA_Data_Prep" />
+        <item index="0" class="java.lang.String" itemvalue="Python.LDA_Model_Check" />
+        <item index="1" class="java.lang.String" itemvalue="Python.LDA_Data_Prep2" />
         <item index="2" class="java.lang.String" itemvalue="Python.Tweet_to_Trend2" />
       </list>
     </recent_temporary>
@@ -478,7 +462,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3599114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3599114" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -519,22 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="238" column="2" selection-start-line="238" selection-start-column="2" selection-end-line="240" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#630#1179#0" expanded="false" />
-            <element signature="e#1220#3972#0" expanded="false" />
-            <element signature="e#4014#4558#0" expanded="false" />
-            <element signature="e#4630#6589#0" expanded="false" />
-            <element signature="e#6633#6889#0" expanded="false" />
-            <element signature="e#10179#10307#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7704918">
@@ -557,10 +525,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="185" selection-end-column="15" />
+          <folding>
+            <element signature="e#2#21#0" expanded="false" />
+            <element signature="e#386#619#0" expanded="false" />
+            <element signature="e#668#2011#0" expanded="false" />
+            <element signature="e#2050#2269#0" expanded="false" />
+            <element signature="e#3270#3503#0" expanded="false" />
+            <element signature="e#3580#5589#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="181" column="44" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#630#1179#0" expanded="false" />
+            <element signature="e#1220#3972#0" expanded="false" />
+            <element signature="e#4014#4558#0" expanded="false" />
+            <element signature="e#4630#6589#0" expanded="false" />
+            <element signature="e#6633#6889#0" expanded="false" />
+            <element signature="e#6961#9377#0" expanded="false" />
+            <element signature="e#10179#10307#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LDA/LDA_Data_Prep2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <caret line="83" column="15" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="15" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#521#563#0" expanded="false" />
@@ -573,29 +573,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Tweet_to_Trend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="185" selection-end-column="15" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-            <element signature="e#386#619#0" expanded="false" />
-            <element signature="e#668#2011#0" expanded="false" />
-            <element signature="e#2050#2269#0" expanded="false" />
-            <element signature="e#2340#3221#0" expanded="false" />
-            <element signature="e#3270#3503#0" expanded="false" />
-            <element signature="e#3580#5589#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LDA/LDA_Model_Check.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27868852">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.73770493">
+          <caret line="99" column="36" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="36" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1841#2332#0" expanded="false" />
+            <element signature="e#1664#1843#0" expanded="false" />
           </folding>
         </state>
       </provider>
