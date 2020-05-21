@@ -38,7 +38,7 @@ def load_lda_datasets():
     dicts = Dictionary.load_from_text("./ldadata/dictionary0")
     print("LOADING DICTIONARY, LENGTH: ", len(dicts))
 
-    dataset = pd.read_csv("./ldadata/stemmed_data.zip")
+    dataset = pd.read_pickle("./ldadata/stemmed_data.pkl")
     print("LOADING DATASET, LENGTH: ", len(dataset))
 
     return dataset, corps, dicts
@@ -63,7 +63,7 @@ def models_run_parallelized():
     pool = mp.Pool(mp.cpu_count() - 2)
 
     for topic_number in range(10, 17, 3):
-        pool.apply_async(models_run_function, args=(topic_number) )
+        pool.apply_async(models_run_function, args=(topic_number))
 
     pool.close()
     pool.join()
@@ -80,7 +80,7 @@ def models_check(topic_num):
     print('Perplexity Score: ', lda_model.log_perplexity(corpus))
 
     # Compute Coherence Score
-    cohr_val = CoherenceModel(model=lda_model, texts=stemmed_dataset['0'], corpus = corpus, dictionary=dictionary, coherence='u_mass').get_coherence()
+    cohr_val = CoherenceModel(model=lda_model, texts=stemmed_dataset, corpus=corpus, dictionary=dictionary, coherence='c_v').get_coherence()
     print('Coherence Score: ', cohr_val)
     print("========================================")
 
@@ -94,8 +94,8 @@ if __name__ == '__main__':
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
     # models_run_parallelized()
-    for topic_number in range(10, 30, 3):
-        models_run_function((topic_number))
+    # for topic_number in range(10, 30, 3):
+    #     models_run_function((topic_number))
 
     for topic_number in range(10, 30, 3):
         models_check(topic_number)

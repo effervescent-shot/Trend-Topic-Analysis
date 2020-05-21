@@ -78,44 +78,30 @@ if __name__ == '__main__':
 
     # Create data structures to be used in LDA
     stemmed_dataset = process_lda_format(trend_docs)
-    # corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
+    corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
 
 
     # SAVE DATA
     #
-    # output_fname = get_tmpfile("corpus0.mm")
-    # MmCorpus.serialize(output_fname, corpus)
-    # mm = MmCorpus(output_fname)
-    # mm.save("./ldadata/corpus0")
-    #
-    # dictionary.save_as_text("./ldadata/dictionary0")
+    output_fname = get_tmpfile("corpus0.mm")
+    MmCorpus.serialize(output_fname, corpus)
+    mm = MmCorpus(output_fname)
+    mm.save("./ldadata/corpus0")
 
-    stemmed_dataset.to_csv('./ldadata/stemmed_data.zip', index=False)
+    dictionary.save_as_text("./ldadata/dictionary0")
+
+    stemmed_dataset.to_pickle('./ldadata/stemmed_data.pkl')
 
     print("FINISHED SAVING")
 
-    # print("CHECKING INTEGRITY")
-    # corps = MmCorpus.load("./ldadata/corpus0")
-    # print("CORPUS: ", len(corpus), len(corps))
-    #
-    # dicts = Dictionary.load_from_text("./ldadata/dictionary0")
-    # print("DICTIONARY: ", len(dictionary), len(dicts))
+    print("CHECKING INTEGRITY")
+    corps = MmCorpus.load("./ldadata/corpus0")
+    print("CORPUS: ", len(corpus), len(corps))
 
-    dataset = pd.read_csv("./ldadata/stemmed_data.zip")
+    dicts = Dictionary.load_from_text("./ldadata/dictionary0")
+    print("DICTIONARY: ", len(dictionary), len(dicts))
+
+    dataset = pd.read_pickle("./ldadata/stemmed_data.pkl")
     print("DATASET: ", len(stemmed_dataset), len(dataset))
 
 
-
-    # Load a potentially pretrained model from disk.
-    # cwd = os.getcwd()
-    # temp_file = datapath(os.path.join(cwd, "models/lda_model_16"))
-    # lda = models.ldamodel.LdaModel.load(temp_file)
-
-    # words_match = re.compile(r'\"\w+\"')
-    # for idx, topic in lda.print_topics(-1):
-    #     topic_file = open(os.path.join(TOPICS_PATH, "topic-" + str(idx) + ".txt"), "w+")
-    #     words = re.findall(words_match, topic)
-    #     topic_file.write(str(words))
-    #     topic_file.close()
-    #
-    # print("Topics are saved under topics.")

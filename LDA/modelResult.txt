@@ -1,0 +1,14 @@
+HRE WE GO!
+LOADING CORPUS, LENGTH:  1151
+LOADING DICTIONARY, LENGTH:  54164
+LOADING DATASET, LENGTH:  1151
+Topic number =  10
+Perplexity Score:  -7.434890594980527
+Coherence Score:  0.6479457303553466
+========================================
+Topic number =  13
+Perplexity Score:  -7.7391294851502614
+Coherence Score:  0.6530598135297102
+========================================
+Topic number =  16
+Perplexity Score:  -8.16939447870442

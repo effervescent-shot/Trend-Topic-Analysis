@@ -115,3 +115,20 @@ if __name__ == '__main__':
     print("Hello, in total {} train data, and {} test data is saved.".format(dfs_train.shape[0], dfs_test.shape[0]))
 
 
+
+
+
+    # Load a potentially pretrained model from disk.
+    # cwd = os.getcwd()
+    # temp_file = datapath(os.path.join(cwd, "models/lda_model_16"))
+    # lda = models.ldamodel.LdaModel.load(temp_file)
+
+    # words_match = re.compile(r'\"\w+\"')
+    # for idx, topic in lda.print_topics(-1):
+    #     topic_file = open(os.path.join(TOPICS_PATH, "topic-" + str(idx) + ".txt"), "w+")
+    #     words = re.findall(words_match, topic)
+    #     topic_file.write(str(words))
+    #     topic_file.close()
+    #
+    # print("Topics are saved under topics.")
+
