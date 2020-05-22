@@ -1,0 +1,55 @@
+HERE WE GO!
+LOADING CORPUS, LENGTH:  6737
+LOADING DICTIONARY, LENGTH:  239733
+LOADING DATASET, LENGTH:  6737
+Model start running for  7  topics. Start time:  2020-05-21 20:42:14.729927
+Finish time:  2020-05-21 20:46:17.586637 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_7 
+
+Model start running for  10  topics. Start time:  2020-05-21 20:46:17.848412
+Finish time:  2020-05-21 20:51:23.232625 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_10 
+
+Model start running for  13  topics. Start time:  2020-05-21 20:51:23.615285
+Finish time:  2020-05-21 20:57:45.139007 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_13 
+
+Model start running for  16  topics. Start time:  2020-05-21 20:57:45.561216
+Finish time:  2020-05-21 21:04:51.236095 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_16 
+
+Model start running for  19  topics. Start time:  2020-05-21 21:04:51.758290
+Finish time:  2020-05-21 21:12:57.699230 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_19 
+
+Model start running for  22  topics. Start time:  2020-05-21 21:12:57.960977
+Finish time:  2020-05-21 21:22:13.581080 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_22 
+
+Model start running for  25  topics. Start time:  2020-05-22 11:49:08.870271
+Finish time:  2020-05-22 11:59:39.145027 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_25 
+
+Topic number =  7
+Perplexity Score:  -8.086375261345077
+Coherence Score:  0.5000817622720601
+========================================
+Topic number =  10
+Perplexity Score:  -8.374136603723164
+Coherence Score:  0.5016561939662056
+========================================
+Topic number =  13
+Perplexity Score:  -9.016946263657822
+Coherence Score:  0.5735946872216044
+========================================
+Topic number =  16
+Perplexity Score:  -9.860881252611904
+Coherence Score:  0.5910006551007843
+========================================
+Topic number =  19
+Perplexity Score:  -10.559488302220146
+Coherence Score:  0.5976035961423876
+========================================
+Topic number =  22
+Perplexity Score:  -10.934780939060607
+Coherence Score:  0.5789680944639705
+========================================
+Topic number =  25
+Perplexity Score:  -11.29838375686656
+Coherence Score:  0.5793945925798026
+========================================
+
+

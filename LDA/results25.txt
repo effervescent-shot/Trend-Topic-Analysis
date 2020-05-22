@@ -1,0 +1,11 @@
+HERE WE GO!
+LOADING CORPUS, LENGTH:  6737
+LOADING DICTIONARY, LENGTH:  239733
+LOADING DATASET, LENGTH:  6737
+Model start running for  25  topics. Start time:  2020-05-22 11:49:08.870271
+Finish time:  2020-05-22 11:59:39.145027 Model is saving... at /home/ritter/Trend-Topic-Analysis/LDA/models/lda_model_25 
+
+Topic number =  25
+Perplexity Score:  -11.29838375686656
+Coherence Score:  0.5793945925798026
+========================================
