@@ -39,7 +39,6 @@ def load_lda_datasets():
 def models_run_function(topic_num):
     # Model with the best coherence_value
     print('Model start running for ', topic_num, ' topics. Start time: ', datetime.now())
-    #ldamodel.LdaModel
     lda_model = models.ldamodel.LdaModel(corpus=corpus, id2word=dictionary, num_topics=topic_num,
                                         random_state=1, chunksize=100, passes=5,
                                         alpha='auto', per_word_topics=True)
@@ -54,8 +53,8 @@ def models_run_function(topic_num):
 def models_run_parallelized():
 
     pool = mp.Pool(mp.cpu_count()-2)
-
-    for topic_number in range(10, 17, 3):
+    print("Parallel Run!")
+    for topic_number in range(7, 25, 3):
         pool.apply_async(models_run_function, args=(topic_number))
 
     pool.close()
@@ -78,16 +77,13 @@ def models_check(topic_num):
     print("========================================")
 
 
-
-
-
 if __name__ == '__main__':
 
     print("HERE WE GO!")
     stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
-    for topic_number in range(25, 26, 1):
+    for topic_number in range(7, 26, 3):
         models_run_function((topic_number))
 
-    for topic_number in range(25, 26, 1):
+    for topic_number in range(7, 26, 1):
         models_check(topic_number)
