@@ -7,6 +7,7 @@ from gensim.corpora import MmCorpus, Dictionary
 from gensim.test.utils import get_tmpfile
 
 
+import pickle
 # NLTK Stop words
 from nltk.corpus import stopwords
 
@@ -78,30 +79,36 @@ if __name__ == '__main__':
 
     # Create data structures to be used in LDA
     stemmed_dataset = process_lda_format(trend_docs)
-    corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
+
+    # corpus, dictionary = initialize_corpus_and_dictionary(stemmed_dataset)
 
 
     # SAVE DATA
     #
-    output_fname = get_tmpfile("corpus0.mm")
-    MmCorpus.serialize(output_fname, corpus)
-    mm = MmCorpus(output_fname)
-    mm.save("./ldadata/corpus0")
+    # output_fname = get_tmpfile("corpus0.mm")
+    # MmCorpus.serialize(output_fname, corpus)
+    # mm = MmCorpus(output_fname)
+    # mm.save("./ldadata/corpus0")
+    #
+    # dictionary.save_as_text("./ldadata/dictionary0")
 
-    dictionary.save_as_text("./ldadata/dictionary0")
+    f = open('./ldadata/stemmed_data_new.pkl', 'w')
+    pickle.dump(stemmed_dataset, f)
 
-    stemmed_dataset.to_pickle('./ldadata/stemmed_data.pkl')
-
+    # stemmed_dataset.to_pickle('./ldadata/stemmed_data_new.pkl')
     print("FINISHED SAVING")
 
-    print("CHECKING INTEGRITY")
-    corps = MmCorpus.load("./ldadata/corpus0")
-    print("CORPUS: ", len(corpus), len(corps))
+    # print("CHECKING INTEGRITY")
+    # corps = MmCorpus.load("./ldadata/corpus0")
+    # print("CORPUS: ", len(corpus), len(corps))
+    #
+    # dicts = Dictionary.load_from_text("./ldadata/dictionary0")
+    # print("DICTIONARY: ", len(dictionary), len(dicts))
 
-    dicts = Dictionary.load_from_text("./ldadata/dictionary0")
-    print("DICTIONARY: ", len(dictionary), len(dicts))
-
-    dataset = pd.read_pickle("./ldadata/stemmed_data.pkl")
+    f = open('./ldadata/stemmed_data_new.pkl', 'w')
+    mydict = pickle.load(f)
+    dataset = pd.DataFrame(mydict)
+    # dataset = pd.read_pickle("./ldadata/stemmed_data_new.pkl")
     print("DATASET: ", len(stemmed_dataset), len(dataset))
 
 
