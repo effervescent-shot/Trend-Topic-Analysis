@@ -108,6 +108,7 @@ if __name__ == '__main__':
     f = open('./ldadata/stemmed_data_new.pkl', 'w')
     mydict = pickle.load(f)
     dataset = pd.DataFrame(mydict)
+
     # dataset = pd.read_pickle("./ldadata/stemmed_data_new.pkl")
     print("DATASET: ", len(stemmed_dataset), len(dataset))
 

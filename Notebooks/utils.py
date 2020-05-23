@@ -49,30 +49,24 @@ def load_raw_datasets():
 
 def load_lda_datasets():
 
-    corps = MmCorpus.load("../LDA/ldadata/corpus0")
+    corps = MmCorpus("../LDA/ldadata/corpusnew")
     print("LOADING CORPUS, LENGTH: ", len(corps))
 
     dicts = Dictionary.load_from_text("../LDA/ldadata/dictionary0")
     print("LOADING DICTIONARY, LENGTH: ", len(dicts))
 
-
-    file = open("../LDA/ldadata/prev-small/stemmed_data.pkl", "rb")
+    file = open("../LDA/ldadata/stemmed_data_new.pkl", "rb")
     obj = pickle.load(file)
     dataset = pd.DataFrame(obj)
-    #
-
+    file.close()
     # dataset = pd.read_pickle("../LDA/ldadata/stemmed_data.pkl")
     print("LOADING DATASET, LENGTH: ", len(dataset))
 
     return dataset, corps, dicts
 
 
-
-
-
-
-dfs_train, trend_doc = load_raw_datasets()
-stemmed_dataset, corpus, dictionary = load_lda_datasets()
+# dfs_train, trend_doc = load_raw_datasets()
+# stemmed_dataset, corpus, dictionary = load_lda_datasets()
 
 def semmatize_text(text):
     ps = PorterStemmer()
@@ -84,7 +78,7 @@ def tokanize_text(trend_doc):
 
 
 def remove_stopwords(texts):
-    return [word for word in texts if word not in stop_words ]
+    return [word for word in texts if word not in stop_words]
 
 
 def process_lda_format(trend_doc):
@@ -94,7 +88,7 @@ def process_lda_format(trend_doc):
     return stemmed_dataset
 
 
-def load_test_dataset():
+def load_test_dataset(dictionary):
     dfs_test =  pd.read_csv(os.path.join(SAVE_PATH, "lda_test_data"), header=0, parse_dates=['trend_date'])
     dfsLDA_test = dfs_test.loc[:,["trend","text"]]
     dfsLDA_test.dropna(inplace=True)
@@ -102,10 +96,12 @@ def load_test_dataset():
     stemmed_test = process_lda_format(test_doc)
     corpus_test = [dictionary.doc2bow(word) for word in stemmed_test]
 
+    print("Test dataset is loaded, LENGHT: ", len(dfsLDA_test))
+    print("Test corpus is created, LENGTH: ", len(corpus_test))
     return test_doc, stemmed_test, corpus_test
 
 stop_words = get_stop_words()
-test_doc, stemmed_test, corpus_test = load_test_dataset()
+# test_doc, stemmed_test, corpus_test = load_test_dataset()
 
 def load_model(topic_num):
     # Get file path
@@ -116,18 +112,3 @@ def load_model(topic_num):
     return lda_test
 
 
-# with open('mypickle.pickle', 'wb') as f:
-#     pickle.dump(some_obj, f)
-
-
-
-# dfs_train =  pd.read_csv(os.path.join(SAVE_PATH, "lda_train_data"), header=0, parse_dates=['trend_date'])
-# dfsLDA_train = dfs_train.loc[:,["trend","text"]]
-# dfsLDA_train.dropna(inplace=True)
-# trend_docs = dfsLDA_train.groupby(['trend'])['text'].apply(lambda x: ','.join(x)).reset_index()
-# print("LOADING RAW DATA TREND-TEXT, LENGTH: ", len(trend_docs))
-#
-# stop_words = get_stop_words()
-# # Create data structures to be used in LDA
-# stemmed_dataset = process_lda_format(trend_docs)
-# stemmed_dataset.to_pickle('./ldadata/stemmed_data_new.pkl')
