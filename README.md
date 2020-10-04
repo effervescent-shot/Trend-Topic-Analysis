@@ -1,5 +1,5 @@
 # Trend-Topic-Analysis
-This is semester projects from Distributed Information Systems Laboratory (LSIR) @ EPFL in spring 2020.
+This is a semester project from Distributed Information Systems Laboratory (LSIR) @ EPFL in spring 2020.
 
 Data analysis and model training can be performed in an ordinary computer as well as parallel maner if the underlying architecture supports it.
 
