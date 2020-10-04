@@ -11,7 +11,11 @@ future for a particular category of news\texts.
 
 ## File Structure
 For security purposes Data is not published.
-Only the bets model is publish under LDA along with model checking scripts
+
+Only the best model is publish under LDA along with model checking scripts
+
 Notebooks are for data preprocessing and cleanup as well as reporting; numbered step by step.
+
 Scripts contains all the code written in Notebooks with proper comments.
+
 Papers folder contains articles read during the project; not each one of them appears as reference in the report 
