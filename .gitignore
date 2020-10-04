@@ -135,6 +135,10 @@ dmypy.json
 # Data
 Data/
 
+# Latex
+Latex/
+
 # LDA data
 LDA/ldadata/
 LDA/models/
+LDA/modelResults3.txt
